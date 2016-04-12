@@ -1,0 +1,48 @@
+<div class="row spacedown2x spaceleft">
+  <div class="col-xs-1">
+    <i class="fa fa-bell icon-notifications"></i>
+  </div>
+  <div class="col-xs-3">
+    <div class="onoffswitch">
+      <input type="checkbox" [(ngModel)]="notificationsEnabled" (click)="toggleNotifications()" name="notificationsSwitch" class="onoffswitch-checkbox" id="notificationsSwitch" />
+      <label class="onoffswitch-label" for="notificationsSwitch"></label>
+    </div>
+  </div>
+  <div class="col-xs-1">
+    <i class="fa fa-volume-up icon-sounds"></i>
+  </div>
+  <div class="col-xs-3">
+    <div class="onoffswitch">
+      <input type="checkbox" [(ngModel)]="notificationSoundEnabled" (click)="toggleSoundEnable()" name="soundSwitch" class="onoffswitch-checkbox" id="soundSwitch" />
+      <label class="onoffswitch-label" for="soundSwitch"></label>
+    </div>
+  </div>
+  <div class="col-xs-1">
+    <i (click)="showModal = !showModal" class="fa fa-question icon-help"></i>
+  </div>
+</div>
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <p>Add streams by typing in the streamname then hit enter or click the <i class="fa fa-plus fa-lg" style="color: #6441a5;"></i> sign.</p>
+    <p>For example, if the stream your are watching has the following url in your browser: https://www.twitch.tv/<b>mlg</b>
+      <br>Then the name to input is <b>mlg</b></p>
+    <hr>
+    <i (click)="showModal = !showModal" class="fa fa-times fa-lg close-modal"></i>
+    <p><i class="fa fa-bell fa-lg" style="margin-right: 10px;"></i><span>Show/Hide notifications</span></p>
+    <p><i class="fa fa-volume-up fa-lg" style="margin-right: 10px;"></i><span>Enable/Disable sounds</span></p>
+    <hr>
+    <p><i class="fa fa-play fa-lg" style="margin-right: 10px;"></i><span>Open with livestreamer</span></p>
+    <p><i class="fa fa-twitch fa-lg" style="margin-right: 10px;"></i><span>Open in browser</span></p>
+    <p><i class="fa fa-times fa-lg" style="margin-right: 10px;"></i><span>Remove stream</span></p>
+    <br>
+    <center>
+      v1.0.2 beta
+      <i class="fa fa-github fa-2x git" style="color: #333333;" (click)="openUrl('https://github.com/michaelsund/twitchwatch2')"></i>
+      created by
+      <a class="link" (click)="openUrl('http://www.osund.com')">osund.com</a>
+      <br>
+      <p>Show some love, leave a tip</p>
+      <i class="fa fa-heart fa-2x pulse" style="color: red;" (click)="openUrl('https://paypal.me/michaelsund')"></i>
+    </center>
+  </div>
+</div>

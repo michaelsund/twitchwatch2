@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TwitchWatch2</title>
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/flexboxgrid.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script>
+    System.config({
+      packages: {
+        app: {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('app/main')
+      .then(null, console.error.bind(console));
+  </script>
+</head>
+
+<body>
+  <div id="title-bar">
+    <div id="title">TwitchWatch2</div>
+    <div id="title-bar-btns">
+      <button id="close-btn"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+  <div id="content">
+    <twitchwatch2>
+      <i class="fa fa-cog fa-spin fa-4x loading"></i>
+    </twitchwatch2>
+  </div>
+  <script src="js/toolbar.js"></script>
+</body>
+
+</html>

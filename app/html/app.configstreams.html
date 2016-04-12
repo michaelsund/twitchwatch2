@@ -1,0 +1,28 @@
+<slider [sliderMessage]="sliderMessage" [sliderShow]='sliderShow'></slider>
+<div *ngIf="doneLoading" class="spacedown">
+  <label class="input-label">
+    <i class="fa fa-plus addStream" (click)="addStream()"></i>
+    <input type="text" class="inputstream" placeholder="Streamname" [(ngModel)]="newStreamName" (keyup.enter)="addStream()" />
+  </label>
+</div>
+<div *ngIf="doneLoading" class="row">
+  <div class="col-xs-12">
+    <div style="overflow-y: auto; height:295px;">
+      <div *ngFor="#stream of streams; #i = index">
+        <a *ngIf="stream.state" class="streamerbar streamerbar-on">
+          <span class="item">{{ stream.name }} <span class="viewers">{{ stream.viewers }} viewers</span></span>
+          <p class="game">{{ stream.game }}</p>
+          <img src="{{ stream.logo }}" class="meta stateon stateon-logo">
+          <i (click)="openStream(stream.name, false)" class="fa fa-play icon-livestreamer"></i>
+          <i (click)="openStream(stream.name, true)" class="fa fa-twitch icon-link"></i>
+          <i (click)="delStream(stream.name, i)" class="fa fa-times icon-remove"></i>
+        </a>
+        <a *ngIf="!stream.state" class="streamerbar streamerbar-off">
+          <span class="item">{{ stream.name }}</span>
+          <i (click)="openStream(stream.name, true)" class="fa fa-twitch icon-link"></i>
+          <i (click)="delStream(stream.name, i)" class="fa fa-times icon-remove"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

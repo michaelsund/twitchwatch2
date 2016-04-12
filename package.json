@@ -1,0 +1,44 @@
+{
+  "name": "TwitchWatch2",
+  "version": "1.0.2",
+  "licenses": {
+    "type": "GPL",
+    "url": "https://github.com/michaelsund/twitchwatch2/blob/master/LICENSE"
+  },
+  "description": "Twitch notifications",
+  "main": "main.js",
+  "private": "true",
+  "author": "Michael Sund <michael@osund.com>",
+  "scripts": {
+    "start": "electron main.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "dev": "concurrent \"npm run tsc:w\" \"npm start\" ",
+    "packagewin": "electron-packager ./ TwitchWatch2 --out ./builds --version 0.36.7 --platform=win32 --arch=x64 --overwrite --icon=pics/tw2-ico-48x48.ico",
+    "packagelin": "electron-packager ./ TwitchWatch2 --out ./builds --version 0.36.7 --platform=linux --arch=x64 --overwrite --icon=./pics/tw2-ico-48x48.png",
+    "packageosx": "electron-packager ./ TwitchWatch2 --out ./builds --version 0.36.7 --platform=darwin --arch=x64 --overwrite --icon=./pics/tw2-ico-48x48.icns",
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.12",
+    "async": "^1.5.2",
+    "es6-shim": "^0.35.0",
+    "node-notifier": "^4.4.0",
+    "reflect-metadata": "0.1.2",
+    "request": "^2.70.0",
+    "require": "^2.4.20",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.24",
+    "zone.js": "0.6.6"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "electron-packager": "^6.0.0",
+    "electron-prebuilt": "^0.36.7",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
+  }
+}
