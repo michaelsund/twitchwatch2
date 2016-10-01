@@ -5,11 +5,12 @@ const async = require('async');
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const appver = "TwitchWatch2 1.0.0";
+const appver = "TwitchWatch2 1.0.3";
 const fs = require('fs');
 const request = require('request');
 const shell = require('electron').shell;
 const child_process = require('child_process');
+const key = require('./config.json').key;
 
 var debug = false;
 var ipc = require("electron").ipcMain;
@@ -203,7 +204,13 @@ function checkTwitch(firstrun, runForever) {
     streamlist += cfg.streams[z].name + ',';
   }
   streamlist = streamlist.slice(0, -1);
-  request('https://api.twitch.tv/kraken/streams?channel=' + streamlist, function(error, response, body) {
+  var options = {
+    url: 'https://api.twitch.tv/kraken/streams?channel=' + streamlist,
+    headers: {
+      'Client-ID': key
+    }
+  };
+  request(options, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var parsed = JSON.parse(body);
       if (parsed.streams.length === 0) {
