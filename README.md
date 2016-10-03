@@ -4,7 +4,7 @@ Twitch stream notifications
 v1.0.3
 
 **Development Notes**
-To run the client you need to register a application at twitch.tv under your own account.
+To develop the application further you need to register a application at twitch.tv under your own account since i wont be sharing my own key.
 Then copy the application key and create the file "config.json" with the following
 {
   "key": "your_application_key"
