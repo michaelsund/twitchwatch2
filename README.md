@@ -15,6 +15,7 @@ Then copy the application key and create the file "config.json" with the followi
 - typings install --save --ambient require
 - npm run postinstall
 - npm run dev
+
 **Building for selected platforms**
 - npm run packagewin
 - npm run packagelin
