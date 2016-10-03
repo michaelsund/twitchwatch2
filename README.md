@@ -1,7 +1,7 @@
 # TwitchWatch2
 # Author: Michael Sund, michael@osund.com
 Twitch stream notifications
-v1.0.2 (beta) initial release
+v1.0.3
 
 **Development Notes**
 To run the client you need to register a application at twitch.tv under your own account.
