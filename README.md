@@ -3,6 +3,8 @@
 Twitch stream notifications
 v1.0.3
 
+Download at http://michaelsund.github.io/twitchwatch2/
+
 **Development Notes**
 
 To develop the application further you need to register a application at twitch.tv under your own account since i wont be sharing my own key.
